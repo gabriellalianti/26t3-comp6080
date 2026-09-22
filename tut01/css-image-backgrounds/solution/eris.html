@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Eris</title>
+	<style type="text/css">
+		/* Task 1 */
+		.erisBox {
+			width: 1500px;
+			height: 800px;
+			border: 1px solid #333;
+			background-color: #cccccc;
+
+			/* Uses the url function to get the eris image and sets it as the background iamge */
+			background-image: url('/eris.jpg');
+			/* Sets so the image doesn't fill the div by repeating */
+			background-repeat: no-repeat;
+			/* The length and height dimension is set to be half of the outer element */
+			background-size: 50% 50%;
+			/* Positions the image at the center */
+			background-position: center;
+
+			/*
+			Background shorthand method:
+			Color, url, repeat, position and size. The / is required to put in those two values
+
+			background: #cccccc url('/eris.jpg') no-repeat center /50% 50%;
+			*/
+		}
+
+		/* Task 2 */
+		.erisBox2 {
+			width: 1500px;
+			height: 2000px;
+			border: 1px solid #333;
+
+			/* Layer a semi-transparent gradient on top of the image using multiple backgrounds.
+			   The first value is rendered on top, the last on the bottom. */
+			background-image:
+				linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+				url('/eris.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			/* fixed: the background stays in place relative to the viewport while the page scrolls,
+			   creating a parallax effect. Change to "scroll" to scroll together with the div. */
+			background-attachment: fixed;
+
+			/*
+			Background shorthand method (gradient layer, image layer):
+
+			background:
+				linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)) no-repeat center / cover fixed,
+				url('/eris.jpg') no-repeat center / cover fixed;
+			*/
+		}
+	</style>
+</head>
+<body>
+	<div class="erisBox">
+
+	</div>
+
+	<div class="erisBox2">
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+body {
+    padding: 8px;
+    font-size: 16px;
+    font-family: Circular, Arial, Helvetica, sans-serif;
+    color: rgb(72, 72, 72);
+
+    /* Pre-set the width to best match the reference picture. */
+    width: 900px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 16px 0;
+}
+
+.login-buttons {
+    margin-top: 32px;
+    margin-bottom: 64px;
+
+    /* Hack to get rid of browser whitespace between inline buttons */
+    font-size: 0px;
+}
+
+/* This targets buttons inside the .login-button class. */
+.login-buttons button {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+
+    /* Override default styling */
+    text-decoration: none;
+    box-shadow: none;
+    font: inherit;
+
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: 2px solid rgb(0, 132, 137);
+    background: transparent;
+    cursor: pointer;
+}
+
+/* This :hover pseudoclass makes it so that the styling here only apply when the
+user's cursor hovers over the element with the .login-buttons class. */
+.login-buttons button:hover {
+    opacity: 0.85;
+}
+
+#login-btn {
+    color: white;
+    background: rgb(0, 132, 137);
+}
+
+#signup-btn {
+    color: rgb(0, 132, 137);
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background: rgb(235, 235, 235);
+}
+
+h2 {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.article-container {
+    /* We're using flexbox for the article container (compared to the reference
+    solution which uses overflow: hidden). */
+    display: flex;
+
+    /* Row is the default flex direction. For clarity purposes it also looks
+    like this: */
+    flex-direction: row;
+}
+
+.article-category {
+    /* This will be to style the children of the article-container flexbox.
+    We're making them have a uniform width of 300px. */
+    width: 300px;
+}
+
+h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+ul {
+    padding: 0;
+    /* Remove default bullet points from the unordered list. */
+    list-style-type: none;
+
+    /* Properties that deal with four sides of an element (for ex. margin,
+    padding, border-width) have shorthand syntax you can use:
+
+    1. If there's one value, it applies to all four sides.
+    2. If there are two values, the first is top/bottom, second is left/right.
+    3. If there are three values, first is top, second is left/right, third is bottom.
+    4. If there are four values, it goes in the order or top, right, bottom, left.
+    */
+    margin: 14px 32px 8px 0; /* Top, right, bottom, left respectively. */
+}
+
+li {
+    padding: 8px 0;
+    line-height: 1.375em;
+    color: rgb(0, 132, 137);
+    cursor: pointer;
+}
+
+li:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: Circular;
+    /* Load the font from the solution */
+    src: url("solution/@font-face/860c3ec7bbc5da3e97233ccecafe512e.woff");
+}

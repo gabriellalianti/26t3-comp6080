@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!--What we're doing differently compared to the reference solution:
+        using flex, pulling the styles into an external stylesheet.-->
+
+        <!--Boilerplate-->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <!--Example of an external stylesheet, where we're using the styles
+        from the file styles.css. Do this for your assignment instead of inline!-->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Log in to contact us</h1>
+        This will help us to quickly identify you and get you the right kind of
+        help
+
+        <!--Use id's for unique items. A class can be used multiple times.-->
+        <!--An element can also have multiple classes, but only one id.-->
+        <div class="login-buttons">
+            <button id="login-btn">Log In</button>
+            <button id="signup-btn">Sign Up</button>
+        </div>
+        <div class="divider"></div>
+        <h2>These articles might help</h2>
+
+        <!--This is our flex container. It has three children, being the
+        three article category divs.-->
+        <div class="article-container">
+            <div class="article-category">
+                <h3>Getting started</h3>
+                <ul>
+                    <li>How do I create an account?</li>
+                    <li>Airbnb Referral Program Terms and Conditions</li>
+                    <li>How do I search for a place to stay?</li>
+                    <li>
+                        How do I contact a host before booking a reservation?
+                    </li>
+                </ul>
+            </div>
+            <div class="article-category">
+                <h3>Your account</h3>
+                <ul>
+                    <li>How do I reset or change my password?</li>
+                    <li>How do I edit, remove or add a payment method?</li>
+                    <li>How do I edit or change my payout method?</li>
+                    <li>How do I deactivate or delete my account?</li>
+                </ul>
+            </div>
+            <div class="article-category">
+                <h3>Bookings</h3>
+                <ul>
+                    <li>How do I book a place to stay?</li>
+                    <li>How do I cancel or change a reservation?</li>
+                    <li>Why was my booking request declined?</li>
+                    <li>How do I leave a review for my host?</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
