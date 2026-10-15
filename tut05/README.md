@@ -1,0 +1,91 @@
+### Short refresher
+- **Not comprehensive**
+- Ideally watch the lectures and the rest of the tutorial walkthroughs in your own time
+
+#### Promises
+- Asynchronous JavaScript
+  - Some operations produce their result later
+    - Network requests
+  - JavaScript represents a future result using a `Promise`
+    - **Pending**
+      - The result is not available yet
+    - **Fulfilled**
+      - The operation succeeded
+      - The promise contains a value
+    - **Rejected**
+      - The operation failed
+      - The promise contains a reason or error
+    - **Settled**
+      - General term meaning either fulfilled or rejected
+- Working with a single promise
+  - `.then()` handles fulfilment
+    - Every `.then()` call returns a new promise
+- Rejections and promise chains
+  - A rejection travels down the chain
+    - Success handlers are skipped
+    - The next rejection handler receives the error
+  - Errors and exceptions cause promise rejections
+  - `.catch()` handles a rejection
+    - It can pass the error to a later `.catch()` by rethrowing
+    - More operations can occur after a `.catch()`
+  - `.finally()` runs after either outcome
+- Working with multiple promises
+  - `Promise.all`
+    - Returns a promise that resolves only if all supplied promises resolve
+  - `Promise.allSettled`
+    - Returns a promise after all supplied promises have settled
+  - `Promise.race`
+    - Races the supplied promises
+  - `Promise.any`
+    - Returns a promise that resolves if at least one supplied promise resolves
+#### Fetch
+- Fetching data
+  - `fetch()` returns a promise
+    - It fulfils when an HTTP response is received
+    - It rejects when there is a network error
+  - An HTTP error is still an HTTP response
+    - A status other than `200` does not automatically reject the fetch promise
+    - The promise fulfils with a `Response`
+#### Async / Await
+- Async and await
+  - `async` and `await` are built on promises
+    - They do not replace the promise model
+    - They provide another syntax for using it
+  - An `async` function always returns a promise
+  - `await` consumes a value or promise
+    - Fulfilled promise
+      - Produces the fulfilled value
+    - Rejected promise
+      - Throws the rejection reason at the `await` expression
+    - Non-promise value
+      - Treated like an already-fulfilled promise
+  - The runtime suspends the async function at `await`
+    - It returns a promise to the caller
+    - It later resumes the function from that point
+- Error handling with async and await
+  - Rejections at an `await` expression are thrown as exceptions
+  - Errors and awaited rejections can be handled with `try/catch`
+  - `try/catch` only catches the rejection if the promise is awaited inside the `try`
+- Execution ordering
+  - Promise handlers run asynchronously
+    - The current function context completes first
+  - `await` suspends the current async function
+    - The async function returns a promise to its caller
+    - The suspended function later resumes from the point where `await` was used
+
+### Exercises: W4
+- [js-browser-url-props-and-date](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-url-props-and-date)
+- [js-browser-building-art](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-building-art)
+- [js-browser-screen-state](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-screen-state)
+- [js-browser-counter-form](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-counter-form)
+- [js-browser-form-collect-validate](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-form-collect-validate)
+- [js-browser-build-dom-completely-loop](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-browser-build-dom-completely-loop)
+
+### Exercises: W5
+- [ajax-fetch-to-ajax](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/ajax-fetch-to-ajax)
+- [js-ajax-recursive-fetch](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/js-ajax-recursive-fetch)
+- [async-promises-timeouts](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/async-promises-timeouts) <-
+- [async-promises-all](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/async-promises-all) <-
+- [async-error-handling](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/async-error-handling) <-
+- [async-nested-promises](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/async-nested-promises) <-
+- [browser-fetch-local-storage](https://cgi.cse.unsw.edu.au/~cs6080/26T3/content/tutorials/browser-fetch-local-storage)
